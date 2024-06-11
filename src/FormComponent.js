@@ -1,5 +1,3 @@
-// src/FormComponent.js
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -41,16 +39,18 @@ const FormComponent = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email Address</label>
+      <div className='searchbar'>
       <input
         id="email"
         type="email"
         value={email}
+        placeholder="Email Address"
         onChange={(e) => setEmail(e.target.value)}
       />
       {error && <div style={{ color: 'red' }}>{error}</div>}
       {success && <div style={{ color: 'green' }}>{success}</div>}
-      <button type="submit">Submit</button>
+      <button type="submit">Contact Me</button>
+      </div>
     </form>
   );
 };
